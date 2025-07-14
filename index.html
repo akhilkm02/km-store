@@ -1,72 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>KM Store Irulam</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; color: #333; }
-    .hero { background: #f8f4ed; padding: 50px; text-align: center; }
-    .hero img { max-width: 200px; border-radius: 50%; }
-    .container { padding: 20px; max-width: 900px; margin: auto; }
-    h2 { color: #2a634f; margin-top: 1.5em; }
-    .services { display: flex; gap: 20px; flex-wrap: wrap; }
-    .card { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 15px; flex: 1 1 250px; box-shadow: 2px 2px 6px rgba(0,0,0,0.1); }
-    .footer { background: #2a634f; color: #fff; padding: 20px; text-align: center; margin-top: 30px; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f6f5;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: #2a634f;
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+      animation: fadeInDown 1s ease-out;
+    }
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2em;
+      opacity: 0.9;
+    }
+
+    .hero img {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      animation: zoomIn 1.2s ease;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h2 {
+      color: #2a634f;
+      margin-bottom: 20px;
+      font-size: 2em;
+      animation: fadeInUp 1s ease;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 25px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      animation: fadeIn 1s ease;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .image-grid img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      transition: transform 0.4s ease;
+    }
+
+    .image-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    .footer {
+      background: #2a634f;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(1.05); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
   </style>
 </head>
 <body>
 
+  <header>
+    <h1>KM Store Irulam</h1>
+    <p>Serving Irulam since 1996 – Groceries, Fresh Produce & Essentials</p>
+  </header>
+
   <div class="hero">
-    <h1>Welcome to KM Store Irulam</h1>
-    <p>Shopping tailored to your needs</p>
-    <img src="https://kmstoreirulam.wordpress.com/wp-content/uploads/2020/04/long-view-2.jpg" alt="Fresh groceries">
+    <img src="https://kmstoreirulam.wordpress.com/wp-content/uploads/2020/04/long-view-2.jpg" alt="KM Store Front View" />
   </div>
 
   <div class="container">
-    <section>
+    <section class="card">
       <h2>About Us</h2>
-      <p>KM Store Irulam was established in 1996 in Irulam, conveniently located opposite the Grameen Bank. We believe top-quality service should be accessible to all, without extra cost. We offer bundled deals, free home delivery, and a curated grocery range—saving you time and money.</p>
+      <p>Located in the heart of Irulam, KM Store has been a trusted provider of groceries, spices, fruits, and essentials since 1996. We pride ourselves on quality, affordability, and free home delivery across the area.</p>
     </section>
 
-    <section>
+    <section class="card">
       <h2>Our Services</h2>
-      <div class="services">
-        <div class="card">
-          <h3>Grocery Items</h3>
-          <p>We stock quality staples like Basmati and non‑Basmati rice, Chana Dal, Mogar Dal, Ragi Bites, Millet Muesli, Ragi Flakes, Oat & Millet Meals, Soulfull Multi‑Grain Loopies and Desi Muesli.</p>
+      <div class="grid">
+        <div>
+          <h3>Groceries & Staples</h3>
+          <p>Basmati & Non-Basmati Rice, Dals, Spices, Oils and packaged foods.</p>
         </div>
-        <div class="card">
-          <h3>Fresh Fruits</h3>
-          <p>Seasonal fruits including bananas, oranges, pineapples, and more—everyday freshness at the best prices.</p>
+        <div>
+          <h3>Fresh Produce</h3>
+          <p>Seasonal fruits & vegetables delivered daily – bananas, pineapples, and more.</p>
         </div>
-        <div class="card">
-          <h3>Specialty Items</h3>
-          <p>Coir products, spices, dairy, and dry fish—locally sourced and quality checked.</p>
+        <div>
+          <h3>Local Specialties</h3>
+          <p>Dry fish, coir products, Kerala spices and traditional essentials.</p>
         </div>
       </div>
     </section>
 
-    <section>
-      <h2>Why Choose Us?</h2>
-      <ul>
-        <li>Free home delivery</li>
-        <li>Exclusive deals & bundle discounts</li>
-        <li>Purposeful savings in time and money</li>
-        <li>Customer-focused suggestions and support</li>
-      </ul>
+    <section class="card">
+      <h2>Gallery</h2>
+      <div class="grid image-grid">
+        <img src="https://kmstoreirulam.wordpress.com/wp-content/uploads/2020/04/banana-1.jpg" alt="Banana Display" />
+        <img src="https://kmstoreirulam.wordpress.com/wp-content/uploads/2020/04/shopinside-1.jpg" alt="Inside the Shop" />
+        <img src="https://kmstoreirulam.wordpress.com/wp-content/uploads/2025/06/image.png" alt="Front Display" />
+        <img src="https://kmstoreirulam.wordpress.com/wp-content/uploads/2020/04/long-view-2.jpg" alt="Long View of Store" />
+      </div>
     </section>
 
-    <section>
-      <h2>Contact & Location</h2>
-      <p><strong>Address:</strong> Irulam – Kenichira Rd, Irulath, Irulam, Kerala 673596, India</p>
-      <p><strong>Phone:</strong> +91‑97440 21794</p>
-      <p><em>Open daily from 8 AM to 10 PM</em></p>
+    <section class="card">
+      <h2>Visit Us</h2>
+      <p><strong>Address:</strong> Irulam – Kenichira Rd, Irulath, Wayanad, Kerala 673596</p>
+      <p><strong>Phone:</strong> +91‑97440‑21794</p>
+      <p><strong>Hours:</strong> Open daily from 8 AM to 10 PM</p>
     </section>
   </div>
 
-  <div class="footer">
-    <p>© KM Store Irulam | Grocery store since 1996</p>
-  </div>
+  <footer class="footer">
+    <p>© 1996–2025 KM Store Irulam. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
