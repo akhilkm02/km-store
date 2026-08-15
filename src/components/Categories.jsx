@@ -18,7 +18,7 @@ export default function Categories() {
             <div className="row g-4">
                 <div className="col-md-6 col-lg-3">
                     <div className="category-card">
-                        <img src="/images/vegitables.jpg"
+                        <img src="/images//images/vegitables.jpg"
                             className="img-fluid" alt="Fresh Vegetables" />
                         <div className="category-content">
                             <h5>Fresh Vegetables</h5>
@@ -38,7 +38,7 @@ export default function Categories() {
                 </div>
                 <div className="col-md-6 col-lg-3">
                     <div className="category-card">
-                        <img src="/images/groceries.jpg"
+                        <img src="/km-store/images/groceries.jpg"
                             className="img-fluid" alt="Groceries" />
                         <div className="category-content">
                             <h5>Groceries</h5>
@@ -58,7 +58,7 @@ export default function Categories() {
                 </div>
                 <div className="col-md-6 col-lg-3">
                     <div className="category-card">
-                        <img src="/images/dry-fish.jpg"
+                        <img src="/km-store//images/dry-fish.jpg"
                             className="img-fluid" alt="Dry Fish" />
                         <div className="category-content">
                             <h5>Dry Fish</h5>
@@ -88,7 +88,7 @@ export default function Categories() {
                 </div>
                 <div className="col-md-6 col-lg-3">
                     <div className="category-card">
-                        <img src="/images/snacks.jpg"
+                        <img src="/km-store//images/snacks.jpg"
                             className="img-fluid" alt="Snacks" />
                         <div className="category-content">
                             <h5>Snacks</h5>

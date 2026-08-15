@@ -46,14 +46,14 @@ export default function Gallery() {
           </div>
           <div className="col-md-4">
             <img
-              src="/images/vegitables.jpg"
+              src="/km-store//images/vegitables.jpg"
               className="img-fluid rounded-4 shadow gallery-img"
               alt="Vegetables"
             />
           </div>
           <div className="col-md-4">
             <img
-              src="/images/pulses.jpg"
+              src="/km-store//images/pulses.jpg"
               className="img-fluid rounded-4 shadow gallery-img"
               alt="Fresh Grocery"
             />

@@ -12,7 +12,7 @@ export default function Navbar() {
     <nav className="navbar navbar-expand-lg bg-white sticky-top shadow-sm">
       <div className="container">
         <Link className="navbar-brand" to="/" onClick={closeNavbar}>
-          <img src="/images/logo.png" height="55" alt="KM Store Logo" />
+          <img src="/km-store//images/logo.png" height="55" alt="KM Store Logo" />
         </Link>
 
         {/* Mobile Toggle Button */}

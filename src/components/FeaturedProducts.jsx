@@ -43,7 +43,7 @@ export default function FeaturedProducts() {
           <div className="col-lg-3 col-md-6">
             <div className="product-card">
               <img
-                src="/images/fresh-bananas.jpg"
+                src="/km-store//images/fresh-bananas.jpg"
                 className="img-fluid"
                 alt="Fresh Bananas"
               />
@@ -67,7 +67,7 @@ export default function FeaturedProducts() {
           <div className="col-lg-3 col-md-6">
             <div className="product-card">
               <img
-                src="/images/kerala-spices.jpg"
+                src="/km-store//images/kerala-spices.jpg"
                 className="img-fluid"
                 alt="Kerala Spices"
               />

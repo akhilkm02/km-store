@@ -70,7 +70,7 @@ export default function GalleryPage() {
               <div className="col-lg-4 col-md-6">
                 <div className="gallery-card">
                   <img
-                    src="/images/fresh-vegitables.jpg"
+                    src="/km-store/images/fresh-vegitables.jpg"
                     className="img-fluid rounded shadow gallery-img"
                     alt="Fresh Vegetables"
                   />
@@ -80,7 +80,7 @@ export default function GalleryPage() {
               <div className="col-lg-4 col-md-6">
                 <div className="gallery-card">
                   <img
-                    src="/images/podwer.jpg"
+                    src="/km-store/images/podwer.jpg"
                     className="img-fluid rounded shadow gallery-img"
                     alt="Spices and Powders"
                   />
@@ -90,7 +90,7 @@ export default function GalleryPage() {
               <div className="col-lg-4 col-md-6">
                 <div className="gallery-card">
                   <img
-                    src="/images/snacks.jpg"
+                    src="/km-store/images/snacks.jpg"
                     className="img-fluid rounded shadow gallery-img"
                     alt="Snacks"
                   />
@@ -100,7 +100,7 @@ export default function GalleryPage() {
               <div className="col-lg-4 col-md-6">
                 <div className="gallery-card">
                   <img
-                    src="/images/pulses.jpg"
+                    src="/km-store/images/pulses.jpg"
                     className="img-fluid rounded shadow gallery-img"
                     alt="Pulses"
                   />
@@ -110,7 +110,7 @@ export default function GalleryPage() {
               <div className="col-lg-4 col-md-6">
                 <div className="gallery-card">
                   <img
-                    src="/images/spices.jpg"
+                    src="/km-store/images/spices.jpg"
                     className="img-fluid rounded shadow gallery-img"
                     alt="Kerala Spices"
                   />

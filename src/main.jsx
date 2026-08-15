@@ -13,7 +13,8 @@ import ContactPage from './pages/ContactPage.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+    {/* basename tells React Router to strip /km-store/ out of the URL matching */}
+    <BrowserRouter basename="/km-store">
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/products" element={<ProductsPage />} />
