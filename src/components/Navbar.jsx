@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   // State to track whether the mobile menu is open or closed
@@ -10,9 +11,9 @@ export default function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg bg-white sticky-top shadow-sm">
       <div className="container">
-        <a className="navbar-brand" href="#home" onClick={closeNavbar}>
+        <Link className="navbar-brand" to="/" onClick={closeNavbar}>
           <img src="/images/logo.png" height="55" alt="KM Store Logo" />
-        </a>
+        </Link>
 
         {/* Mobile Toggle Button */}
         <button
@@ -30,19 +31,27 @@ export default function Navbar() {
         <div className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`} id="menu">
           <ul className="navbar-nav mx-auto">
             <li className="nav-item">
-              <a className="nav-link active" href="#home" onClick={closeNavbar}>Home</a>
+              <Link className="nav-link" to="/" onClick={closeNavbar}>Home</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#products" onClick={closeNavbar}>Products</a>
+              <Link className="nav-link" to="/products" onClick={closeNavbar}>
+                Products
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#gallery" onClick={closeNavbar}>Gallery</a>
+              <Link className="nav-link" to="/gallery" onClick={closeNavbar}>
+                Gallery
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#about" onClick={closeNavbar}>About</a>
+              <Link className="nav-link" to="/about" onClick={closeNavbar}>
+                About
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#contact" onClick={closeNavbar}>Contact</a>
+              <Link className="nav-link" to="/contact" onClick={closeNavbar}>
+                Contact
+              </Link>
             </li>
           </ul>
           <div>
