@@ -18,7 +18,7 @@ export default function Categories() {
             <div className="row g-4">
                 <div className="col-md-6 col-lg-3">
                     <div className="category-card">
-                        <img src="/images//images/vegitables.jpg"
+                        <img src="/km-store/images/vegitables.jpg"
                             className="img-fluid" alt="Fresh Vegetables" />
                         <div className="category-content">
                             <h5>Fresh Vegetables</h5>
