@@ -19,10 +19,57 @@ export default function Footer() {
 
   const scrollToTop = (e) => {
     e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    const targetPosition = 0;
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    const duration = 1000;
+    let startTime = null;
+
+    const animation = (currentTime) => {
+      if (startTime === null) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+      const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+      window.scrollTo(0, run);
+      if (timeElapsed < duration) {
+        requestAnimationFrame(animation);
+      }
+    };
+
+    const easeInOutQuad = (t, b, c, d) => {
+      t /= d / 2;
+      if (t < 1) return (c / 2) * t * t + b;
+      t--;
+      return (-c / 2) * (t * (t - 2) - 1) + b;
+    };
+
+    requestAnimationFrame(animation);
+  };
+
+  const handleLinkClick = () => {
+    const targetPosition = 0;
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    const duration = 1000;
+    let startTime = null;
+
+    const animation = (currentTime) => {
+      if (startTime === null) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+      const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+      window.scrollTo(0, run);
+      if (timeElapsed < duration) {
+        requestAnimationFrame(animation);
+      }
+    };
+
+    const easeInOutQuad = (t, b, c, d) => {
+      t /= d / 2;
+      if (t < 1) return (c / 2) * t * t + b;
+      t--;
+      return (-c / 2) * (t * (t - 2) - 1) + b;
+    };
+
+    requestAnimationFrame(animation);
   };
 
   return (
@@ -45,11 +92,11 @@ export default function Footer() {
                 Quick Links
               </h5>
               <ul className="list-unstyled footer-links">
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/products">Products</Link></li>
-                <li><Link to="/gallery">Gallery</Link></li>
-                <li><Link to="/about">About</Link></li>
-                <li><Link to="/contact">Contact</Link></li>
+                <li className="mb-2"><Link to="/" onClick={handleLinkClick}>Home</Link></li>
+                <li className="mb-2"><Link to="/products" onClick={handleLinkClick}>Products</Link></li>
+                <li className="mb-2"><Link to="/gallery" onClick={handleLinkClick}>Gallery</Link></li>
+                <li className="mb-2"><Link to="/about" onClick={handleLinkClick}>About</Link></li>
+                <li className="mb-2"><Link to="/contact" onClick={handleLinkClick}>Contact</Link></li>
               </ul>
             </div>
             <div className="col-lg-4">
