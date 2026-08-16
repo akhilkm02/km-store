@@ -22,7 +22,7 @@ export default function AboutPage() {
                 Established in 1996, KM Store has been a trusted neighbourhood grocery destination in Irulam, Wayanad. We take pride in providing fresh vegetables, dairy products, authentic Kerala spices, and everyday household essentials to every family in our community.
               </p>
               <p className="text-muted">
-                [Add more details about your store's history, mission, or values here later]
+
               </p>
             </div>
           </div>

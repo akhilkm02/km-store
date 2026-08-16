@@ -78,7 +78,7 @@ export default function Footer() {
         <div className="container">
           <div className="row">
             <div className="col-lg-4">
-              <h4 className="text-white mb-3">
+              <h4 className="text-black mb-3">
                 KM Store Irulam
               </h4>
               <p>
@@ -88,7 +88,7 @@ export default function Footer() {
               </p>
             </div>
             <div className="col-lg-4">
-              <h5 className="text-white mb-3">
+              <h5 className="text-black mb-3">
                 Quick Links
               </h5>
               <ul className="list-unstyled footer-links">
@@ -100,7 +100,7 @@ export default function Footer() {
               </ul>
             </div>
             <div className="col-lg-4">
-              <h5 className="text-white mb-3">
+              <h5 className="text-black mb-3">
                 Contact
               </h5>
               <p>
