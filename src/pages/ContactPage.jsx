@@ -47,6 +47,31 @@ export default function ContactPage() {
       if (result.success) {
         setStatus({ loading: false, success: 'Email sent successfully! We will get back to you soon.', error: '' });
         setFormData({ name: '', phone: '', message: '' });
+        // Smooth scroll to top
+          const targetPosition = 0;
+          const startPosition = window.pageYOffset;
+          const distance = targetPosition - startPosition;
+          const duration = 1000;
+          let startTime = null;
+
+          const animation = (currentTime) => {
+            if (startTime === null) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+            window.scrollTo(0, run);
+            if (timeElapsed < duration) {
+              requestAnimationFrame(animation);
+            }
+          };
+
+          const easeInOutQuad = (t, b, c, d) => {
+            t /= d / 2;
+            if (t < 1) return (c / 2) * t * t + b;
+            t--;
+            return (-c / 2) * (t * (t - 2) - 1) + b;
+          };
+
+          requestAnimationFrame(animation);
       } else {
         setStatus({ loading: false, success: '', error: result.message || 'Something went wrong.' });
       }
