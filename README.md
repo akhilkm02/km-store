@@ -94,6 +94,36 @@ git push origin main
 
 ---
 
+---
+
+## 4. Contact & Email Integration
+
+This application features a dual-inquiry system on the **Contact Us** page, allowing users to send messages via **WhatsApp** or **Email**.
+
+Email handling is powered by **Web3Forms**, which forwards contact form submissions directly to your email inbox without requiring a backend server or complex OAuth/Google API authentication scopes.
+
+### Setting Up Email Integration (Web3Forms)
+
+1. Go to [Web3Forms](https://web3forms.com/).
+2. Enter your store's email address to instantly receive a free **Access Key**.
+3. In your React source code (specifically inside your contact component file, e.g., `ContactPage.jsx`), locate the Web3Forms `fetch` request body:
+
+```javascript
+const response = await fetch("[https://api.web3forms.com/submit](https://api.web3forms.com/submit)", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+  },
+  body: JSON.stringify({
+    access_key: "YOUR_WEB3FORMS_ACCESS_KEY", // Replace with your actual access key
+    name: formData.name,
+    phone: formData.phone,
+    message: formData.message,
+    subject: `New Inquiry from ${formData.name}`
+  })
+});
+
 ## Deploying to GitHub Pages
 
 This project can be deployed to GitHub Pages using the `gh-pages` package.

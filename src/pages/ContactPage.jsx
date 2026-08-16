@@ -9,6 +9,7 @@ export default function ContactPage() {
     phone: '',
     message: ''
   });
+  const [status, setStatus] = useState({ loading: false, success: '', error: '' });
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -21,12 +22,45 @@ export default function ContactPage() {
     window.open(`https://wa.me/${phoneNumber}?text=${text}`, '_blank');
   };
 
+  const sendEmail = async (e) => {
+    e.preventDefault();
+    setStatus({ loading: true, success: '', error: '' });
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          access_key: "3a4277eb-2b1e-42e0-a724-1ca6adbfbc53", // Replace with your key from email
+          name: formData.name,
+          phone: formData.phone,
+          message: formData.message,
+          subject: `New Inquiry from ${formData.name}`
+        })
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setStatus({ loading: false, success: 'Email sent successfully! We will get back to you soon.', error: '' });
+        setFormData({ name: '', phone: '', message: '' });
+      } else {
+        setStatus({ loading: false, success: '', error: result.message || 'Something went wrong.' });
+      }
+    } catch (error) {
+      console.error('Submission Error:', error);
+      setStatus({ loading: false, success: '', error: 'Failed to send email. Please try again or use WhatsApp.' });
+    }
+  };
+
   return (
     <div className="d-flex flex-column min-vh-100">
       <TopBar />
       <Navbar />
 
-      {/* Main Content Area */}
       <main className="flex-grow-1 py-5">
         <div className="container">
           <h2 className="text-center mb-4">Contact Us</h2>
@@ -51,49 +85,70 @@ export default function ContactPage() {
             </div>
 
             <div className="col-lg-6">
-              <form onSubmit={sendToWhatsApp} className="p-4 border rounded shadow-sm bg-white">
+              <div className="p-4 border rounded shadow-sm bg-white">
                 <h4 className="mb-4 text-success">Send an Inquiry</h4>
 
-                <div className="mb-3">
-                  <label className="form-label">Your Name</label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="form-control"
-                    required
-                  />
-                </div>
+                {status.success && <div className="alert alert-success">{status.success}</div>}
+                {status.error && <div className="alert alert-danger">{status.error}</div>}
 
-                <div className="mb-3">
-                  <label className="form-label">Phone Number</label>
-                  <input
-                    type="text"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="form-control"
-                    required
-                  />
-                </div>
+                <form>
+                  <div className="mb-3">
+                    <label className="form-label">Your Name</label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="form-control"
+                      required
+                    />
+                  </div>
 
-                <div className="mb-3">
-                  <label className="form-label">Message / Items Needed</label>
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="form-control"
-                    rows="4"
-                    required
-                  ></textarea>
-                </div>
+                  <div className="mb-3">
+                    <label className="form-label">Phone Number</label>
+                    <input
+                      type="text"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="form-control"
+                      required
+                    />
+                  </div>
 
-                <button type="submit" className="btn btn-success w-100">
-                  <i className="bi bi-whatsapp me-2"></i> Send via WhatsApp
-                </button>
-              </form>
+                  <div className="mb-3">
+                    <label className="form-label">Message / Items Needed</label>
+                    <textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      className="form-control"
+                      rows="4"
+                      required
+                    ></textarea>
+                  </div>
+
+                  <div className="d-grid gap-2">
+                    <button
+                      type="button"
+                      onClick={sendToWhatsApp}
+                      className="btn btn-success"
+                    >
+                      <i className="bi bi-whatsapp me-2"></i> Send via WhatsApp
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={sendEmail}
+                      className="btn btn-outline-primary"
+                      disabled={status.loading}
+                    >
+                      <i className="bi bi-envelope me-2"></i>
+                      {status.loading ? 'Sending Email...' : 'Send via Email'}
+                    </button>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>

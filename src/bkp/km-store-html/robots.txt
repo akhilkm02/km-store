@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://akhilkm02.github.io/km-store/sitemap.xml

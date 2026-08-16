@@ -46,7 +46,7 @@ export default function Gallery() {
           </div>
           <div className="col-md-4">
             <img
-              src="/km-store//images/vegitables.jpg"
+              src="/km-store/images/vegitables.jpg"
               className="img-fluid rounded-4 shadow gallery-img"
               alt="Vegetables"
             />
